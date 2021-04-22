@@ -1,0 +1,173 @@
+{% extends 'nyumba/landlord/landlord_base.html' %}
+{% load static %}
+{% block css %}
+<style>
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.unit_circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+ 
+
+</style>
+{% endblock %}
+{% block content %} 
+<div class="container mt-4 ml-2 mr-4 pr-3 ">
+    <div class="d-flex pr-5 bg-secondary mr-3">
+        <div class="p-2 mr-4 align-self-center">
+            <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="p-2 align-self-center">Name Name</div>
+        <div class="dropdown p-2 pr-3 ml-auto align-self-center">
+            <button class="dropbtn">actions<i class="fa fa-ellipsis-h  ml-3"></i></button>
+            <div class="dropdown-content">
+                <a class="d-flex justify-content-between text-success" href="#">
+                    <div class="p-1">edit property</div>
+                    <div class="p-1">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                </a>
+                <a class="d-flex justify-content-between text-secondary" href="#">
+                    <div class="p-1">archive property</div>
+                    <div class="p-1">
+                        <i class="fa fa-home"></i>
+                    </div>
+                </a>
+                <a class="d-flex justify-content-between text-danger" href="#">
+                    <div class="p-1">delete property</div>
+                    <div class="p-1">
+                        <i class="fa fa-trash-alt"></i>
+                    </div>
+                </a>
+            </div>
+          </div>
+        
+        
+    </div> 
+    <div class="row mt-4 mr-3 pl-1 ml-0 ">
+        <div class="col-sm-3 bg-secondary pl-0 ml-0">
+            <div class="row p-0 m-0">
+                <div class="card" style="object-fit:cover;">
+                    <img class="card-img-top" src="{% static 'User_account/images/rentalink1.png' %}" alt="Card image cap" 
+                    >
+                    <div class="card-body">
+                      <h4 class="card-title">Name Name</h4>
+                      <p class="card-text">location location</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="extra_info">
+                <div class="row p-0 m-0"> equipments and reminders</div>
+                <div class="row p-0 m-0"> occupancy circle</div>
+                <div class="row p-0 m-0">tenants </div>
+                <div class="row p-0 m-0">maintenance</div>
+
+            </div>
+            
+            
+            
+        </div>
+        <div class="col-sm-9 bg-success">
+            <div class="d-flex justify-content-between ">
+                <div class="p-2 bg-info w-100 text-center">profile</div>
+                <div class="p-2 bg-warning w-100 text-center">financials</div>
+                <div class="p-2 bg-danger w-100 text-center">specs</div>
+                <div class="p-2 bg-primary w-100 text-center">utilities</div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-12 pl-4">
+                    <div class="row mt-3">
+                        <div class="d-flex w-100 justify-content-around">
+                            <div class="p-2 "><i class="fa fa-home"></i>units</div>
+                            <div class="p-2  pr-5">view all units</div>
+                          </div>
+                        
+                        <div class="col-12">
+                            <div class="unit_circle mx-auto  text-center">
+                                <div class="align-self-center pt-5">
+                                    2  in <br>total
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-12 text-center pt-2">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
+                                <label class="custom-control-label" for="customRadio">occupied</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
+                                <label class="custom-control-label" for="customRadio2">vacant</label>
+                              </div>
+                        </div>
+                        <div class="col-12 text-center pt-3">
+                            <div class="btn btn-danger mx-auto"><i class="fa fa-plus"></i> Add unit</div>
+                        </div>
+                        <div
+                    </div>
+                    <div class="row">general information</div>
+                    <div class="row">property amenitiies</div>
+                    <div class="row">property attachments</div>
+                    <div class="row">property attachments</div>
+
+                </div>
+                
+            </div>
+            
+            
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}
