@@ -15,6 +15,9 @@ def properties(request):
 def individual_property(request):
     return render(request, 'nyumba/landlord/individual_property.html')
 
+def add_property_form(request):
+    return render(request, 'nyumba/landlord/add_property.html')
+
 
 #tenant views
 def tenant_home(request):
