@@ -218,10 +218,10 @@
                                     </div>
                                 </li>
                                 <li class="nav-item login mr-5">
-                                    <a class="nav-link button border border-primary  ">login</a>
+                                    <a class="nav-link button border border-primary " href="{% url 'User_account:login_template' %}">login</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link button bg-primary  text-center">signup</a>
+                                    <a class="nav-link button bg-primary  text-center" href="{% url 'User_account:register_template' %}">signup</a>
                                 </li>
                             </ul>
                             
@@ -232,7 +232,7 @@
                     background-size: cover;background-repeat: no-repeat;opacity: 1;"> 
                     <div class="image_text mx-auto text-center mb-5">
                         <div class="welcome_text ">rentalinks, best solution for tenants and landlords</div>
-                        <div class="description_text btn mt-2">get started </div>
+                        <div class="description_text btn mt-2"><a href="{% url 'User_account:register_template' %}">get started </a></div>
                     </div>     
                     </div>
                     <!--this is the row that contains the features-->
