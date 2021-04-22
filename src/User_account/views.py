@@ -7,21 +7,12 @@ from .models import *
 def index(request):
     return render(request, 'User_account/index.html')
 
-def landlord_home(request):
-    return render(request, 'User_account/landlord_home.html')
-
-def tenant_home(request):
-    return render(request, 'User_account/tenant_home.html')
-
 #registration and login templates
-def tenant_register(request):
-    return render(request, 'user_account/tenant_register.html')
-
-def landlord_register(request):
-    return render(request, 'user_account/landlord_register.html')
+def register_template(request):
+    return render(request, 'User_account/register_template.html')
 
 def login_template(request):
-    return render(request, 'user_account/login.html')
+    return render(request, 'User_account/login_template.html')
 
 #login, logout and registration views
 def login_user(request):
@@ -32,9 +23,9 @@ def login_user(request):
         if user is not None:
             login(request,user)
             if user.is_landlord == True:
-                return redirect('User_account:landlord_home')
+                return redirect('nyumba:landlord_home')
             else:
-                return redirect('User_account:tenant_home')
+                return redirect('nyumba:tenant_home')
         #check if the user has correct credentials
             django_messages.warning(request, 'INVALID CREDENTIALS!!!')
             return render(request, 'User_account/login.html')
@@ -57,7 +48,8 @@ def register_tenant(request):
 		password = request.POST['password']
 		
 		#create user
-		user = myUser(username=username,password=password,first_name=first_name, last_name=last_name, id_number=id_number, Phone_number=contact,profile_image=profile_image,email=email,is_tenant=True)
+		user = myUser(username=username,password=password,first_name=first_name, last_name=last_name, id_number=id_number, 
+		Phone_number=contact,profile_image=profile_image,email=email,is_tenant=True)
 		try:
 			user.save()
 			return redirect('User_account:login')
@@ -83,7 +75,8 @@ def register_landlord(request):
 		password = request.POST['password']
 		
 		#crete user
-		user = myUser(username=username,password=password,first_name=first_name, last_name=last_name, id_number=id_number, Phone_number=contact,profile_image=profile_image,email=email,is_landlord=True)
+		user = myUser(username=username,password=password,first_name=first_name, last_name=last_name, 
+		id_number=id_number, Phone_number=contact,profile_image=profile_image,email=email,is_landlord=True)
 		try:
 			user.save()
 			login(request,user)
