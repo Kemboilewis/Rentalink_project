@@ -10,6 +10,7 @@ urlpatterns = [
     path('landlord_home/', views.landlord_home, name='landlord_home'),
     path('properties/', views.properties, name='properties'),
     path('individual_property/', views.individual_property, name='individual_property'),
+    path('add_property/', views.add_property_form, name='add_property'),
     #tenant urls
     path('tenant_home/', views.tenant_home, name='tenant_home'),
     #common urls
